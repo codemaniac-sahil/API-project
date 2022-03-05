@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph and CSV</title>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <canvas id="chart" width="400" height="400"></canvas>
+    <script>
+        chartit()
+        const xlabel=[];
+        const ytemps=[];
+        async function chartit(){
+            await getdata();
+        const ctx = document.getElementById('chart').getContext('2d');
+       
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: xlabel,
+        datasets: [{
+            label: 'Global average temperature',
+            data: ytemps,
+            fill:false,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+               
+            ],
+            borderWidth: 1
+        }]
+    },
+
+});
+}
+
+    </script>
+</body>
+
+</html>
